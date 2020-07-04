@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\ProductResource;
 use App\Product;
+use App\Category;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -20,6 +21,12 @@ class ProductController extends Controller
 
         return ProductResource::collection($product);
 
+    }
+
+    public function getCategoryByProducts(Category $category){
+        // dd($category->title);
+        $products = $category->products;
+        return ProductResource::collection($products);
     }
 
     /**

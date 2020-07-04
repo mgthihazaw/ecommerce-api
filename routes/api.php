@@ -16,4 +16,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/category', 'Api\CategoryController@index');
 Route::get('/products', 'Api\ProductController@index');
+Route::get('/category/{category}/products', 'Api\ProductController@getCategoryByProducts');
 Route::get('/sliders', 'Api\SliderController@index');

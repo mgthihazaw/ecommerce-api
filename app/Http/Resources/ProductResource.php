@@ -16,13 +16,13 @@ class ProductResource extends JsonResource
     {
         return [
             "id" => $this->id,
-            "title" => $this->title,
+            "name" => $this->name,
             "description" => $this->description,
             "image" => str_replace("localhost", "192.168.10.26", $this->image),
             "category" => $this->category->title,
             "price" => $this->price,
-            "is_hot" => $this->is_hot,
-            "is_new" => $this->is_new,
+            "is_hot" => $this->is_hot ? true :false,
+            "is_new" => $this->is_new? true :false,
         ];
     }
 }
