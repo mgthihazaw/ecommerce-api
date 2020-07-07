@@ -25,7 +25,7 @@ class ProductController extends Controller
 
     public function getCategoryByProducts(Category $category){
         // dd($category->title);
-        $products = $category->products;
+        $products = $category->products()->paginate(8);
         return ProductResource::collection($products);
     }
 
